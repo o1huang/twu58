@@ -41,9 +41,27 @@ public class Main {
         R_diamondName(1,n);
     }
 
+    public static  void fizzBuzz(int n){
+        for (int i=1;i<=n;i++){
+            if(i%3==0 &&i%5==0){
+                out.println("FizzBuzz");
+            }
+            else if(i%3==0 ){
+                out.println("Fizz");
+            }
+            else if(i%5==0 ){
+                out.println("Buzz");
+            }
+            else{
+                out.println(i);
+            }
+
+        }
+    }
 
     public static void main(String[] args) {
         //rightTriangle(3);
-        diamondName(3);
+        //diamondName(3);
+        fizzBuzz(100);
     }
 }
