@@ -1,7 +1,7 @@
 package com.javaE1;
 
 import static java.lang.System.*;
-
+import java.util.ArrayList;
 public class Main {
     public static void rightTriangle(int n){
         for (int i=0;i<n;i++) {
@@ -59,9 +59,30 @@ public class Main {
         }
     }
 
+    public static ArrayList<Integer> generate(int n){
+        ArrayList<Integer> res= new ArrayList<Integer>();
+        if(n>1){
+            res.add(2);
+        }
+        for (int i=3;i<=n;i++){
+            boolean isPrime = true;
+            for (int dvd=2;dvd<i;dvd++){
+                if(i%dvd==0)
+                    isPrime=false;
+            }
+            if(isPrime)
+                res.add(i);
+        }
+        for (int x:res ){
+            out.print(String.valueOf(x)+" ");
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
         //rightTriangle(3);
         //diamondName(3);
-        fizzBuzz(100);
+        //fizzBuzz(100);
+        generate(100);
     }
 }
